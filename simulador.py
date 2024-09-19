@@ -50,10 +50,13 @@ def atualizar_quantidade_produto():
 
 
 def listar_produtos():
-    print('Produtos disponíveis: ')
-    for nome in nomes:
-        print(f'Nome: {nome}, Quantidade: {quantidades[nomes.index(nome)]}, Preço unitário: R${precos[nomes.index(nome)]:.2f}')
-    time.sleep(3)
+    if len(estoque) == 0:
+        print("o inventario esta vazio")
+    else:
+        print('Produtos disponíveis: ')
+        for nome in nomes:
+            print(f'Nome: {nome}, Quantidade: {quantidades[nomes.index(nome)]}, Preço unitário: R${precos[nomes.index(nome)]:.2f}')
+        time.sleep(2)
 
 
 def valor_total():
